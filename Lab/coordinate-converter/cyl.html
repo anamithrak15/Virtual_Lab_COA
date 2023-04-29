@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coordinate Conversion Simulator</title>
+  <style>
+    /* CSS Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url(co-ord.jpg);
+    }
+    img {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 5px;
+      width: 150px;
+    }
+    .container {
+      width: 500px;
+      margin: 0 auto;
+      color: white;
+      text-align: center;
+    }
+
+    .input-group {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 5px;
+      color: rgb(7, 6, 37);
+    }
+
+    button {
+      padding: 10px;
+      background-color: #05262d;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    h1{
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- <div class="container">
+    <h1>Coordinate Conversion Simulator</h1>
+    <div class="input-group">
+      <label for="cartesianX">Cartesian X:</label>
+      <input type="number" id="cartesianX" step="any" />
+    </div>
+    <div class="input-group">
+      <label for="cartesianY">Cartesian Y:</label>
+      <input type="number" id="cartesianY" step="any" />
+    </div>
+    <div class="input-group">
+      <label for="cartesianZ">Cartesian Z:</label>
+      <input type="number" id="cartesianZ" step="any" />
+    </div>
+    <button onclick="convertCylindricalToSpherical()">Convert to Spherical</button>
+    <button onclick="convertCylindricalToCartesian()">Convert to Cartesian</button>
+    <div id="result"></div>
+  </div> -->
+
+
+  <div class="container">
+	<h1>Converter - Cylindrical to Spherical and Cartesian Coordinates </h1>
+	<form>
+		<label for="rho">ρ:</label>
+		<input type="number" id="rho" name="rho"><br>
+
+		<label for="phi">φ:</label>
+		<input type="number" id="phi" name="phi"><br>
+
+		<label for="z">z:</label>
+		<input type="number" id="z" name="z"><br>
+
+		<button type="button" onclick="convertCylindricalToSpherical()">Convert to Spherical</button>
+		<button type="button" onclick="convertCylindricalToCartesian()">Convert to Cartesian</button>
+	</form>
+
+	<div id="spherical-result" class="text-center"></div>
+	<br>
+	<div id="cartesian-result" class="text-center"></div>
+
+	
+	
+
+
+  <script>
+    function convertCylindricalToSpherical() {
+    const rho = Number(document.getElementById("rho").value);
+    const phi = Number(document.getElementById("phi").value);
+    const z = Number(document.getElementById("z").value);
+  
+    const r = Math.sqrt(rho * rho + z * z);
+    const theta = phi;
+    const phi_spherical = Math.atan2(rho, z);
+  
+    const result = `r = ${r.toFixed(2)}, &theta; = ${theta.toFixed(2)}, &phi; = ${phi_spherical.toFixed(2)}`;
+    document.getElementById("spherical-result").innerHTML = result;
+  }
+  
+  function convertCylindricalToCartesian() {
+    const rho = Number(document.getElementById("rho").value);
+    const phi = Number(document.getElementById("phi").value);
+    const z = Number(document.getElementById("z").value);
+  
+    const x = rho * Math.cos(phi);
+    const y = rho * Math.sin(phi);
+  
+    const result = `x = ${x.toFixed(2)}, y = ${y.toFixed(2)}, z = ${z.toFixed(2)}`;
+    document.getElementById("cartesian-result").innerHTML = result;
+  }
+</script>
+</div>
+</body>
+</html>
