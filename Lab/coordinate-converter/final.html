@@ -6,17 +6,22 @@
     /* CSS Styles */
     body {
       font-family: Arial, sans-serif;
-      background-image: url(co-ord.jpg) ;
+      background: url(cartesian.jpg) ;
+
      
     }
+    
 
     .container {
+      padding-top: 100px;
       width: 700px;
       margin: 0 auto;
-      color: white;
-      text-align: center;
+      color: rgb(232, 227, 253);
+      text-align:center;
     }
-
+.input-group{
+  text-align: left;
+}
     .input-group {
       margin-bottom: 10px;
     }
@@ -45,7 +50,7 @@
       font-weight: bold;
     }
     h1{
-      color: white;
+      color: rgb(240, 243, 244);
     }
 
   </style>
@@ -54,6 +59,7 @@
   <div class="container">
     <!-- <h1>Coordinate Conversion Simulator</h1> -->
     <h1>Converter - Cartesian to Spherical and Cylindrical Coordinates </h1>
+    <br>
     <div class="input-group">
       <label for="cartesianX">Cartesian X:</label>
       <input type="number" id="cartesianX" step="any" />
