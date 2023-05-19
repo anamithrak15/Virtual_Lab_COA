@@ -1,19 +1,1 @@
-Number System:
-1. Set the required conversion system using drop dowm list.
-eg. Binary to Decimal
-2. In the first text box write the number to be converted.
-3. Click on 'Convert'.
-4. The required value will be displayed in the second text box.
 
-
-Master Slave Flip Flop:
-1. Set the position of Clock(CLK), J and K OR enter the value of clock, j and k.
-2. Click on generate to generate the required wave.
-3. Generate will display one wave cycle.
-4. Click on reset to reset the system.
-
-Modulo-19 Gray Code Counter:
-1. Once the user click on start, the systemwill start generating (4-digit) Binary conversion to gray code simultaneously.
-2. The first box displays the binary numberand the second box displays the corresponding Gray Code.
-3. Once the highest number is reched (Binary(1111)) the system again starts generating from zero.
-4. User can stop the conversion by clicking on Stop button.
